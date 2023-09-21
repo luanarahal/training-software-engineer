@@ -1,3 +1,3 @@
-n = 10.2
+n = round(10.2)
 
-print(round(n))
+print(n)

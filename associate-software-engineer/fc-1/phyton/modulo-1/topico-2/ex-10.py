@@ -1,3 +1,3 @@
-n = 10.999999
+n = int(10.999999)
 
-print(int(n))
+print(n)
