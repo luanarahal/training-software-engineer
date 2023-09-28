@@ -1,5 +1,5 @@
 n1 = 100
-n2 = 20
+n2 = 3
 
-div = int(n1 / n2)
+div = n1 // n2
 print(div)

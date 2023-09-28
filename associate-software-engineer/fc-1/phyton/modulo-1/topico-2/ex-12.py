@@ -1,3 +1,4 @@
-name = len("Luana")
+name = "Luana"
+name_length = len(name)
 
-print(name)
+print(name_length)
