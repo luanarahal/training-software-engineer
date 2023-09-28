@@ -1,4 +1,4 @@
 name = "Luana"
 surname = "Luz"
 
-print(name + " " + surname)
+print(f'{name} {surname}')

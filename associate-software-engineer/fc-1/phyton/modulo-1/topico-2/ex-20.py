@@ -1,3 +1,3 @@
-n = 10
+n = float(10)
 
-print(float(n))
+print(n)

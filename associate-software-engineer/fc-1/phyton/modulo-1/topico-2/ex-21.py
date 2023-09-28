@@ -1,3 +1,3 @@
-n = 10.55
+n = int(10.55)
 
-print(int(n))
+print(n)

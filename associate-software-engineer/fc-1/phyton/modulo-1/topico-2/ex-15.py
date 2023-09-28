@@ -1,4 +1,4 @@
 name = "Luana"
 
-name = name.find("n")
-print(name)
+result = name.find("n")
+print(result)

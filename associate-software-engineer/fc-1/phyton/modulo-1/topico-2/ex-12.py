@@ -1,3 +1,3 @@
-name = "Luana"
+name = len("Luana")
 
-print(len(name))
+print(name)

@@ -1,8 +1,8 @@
 name = "Luana"
 print (name)
 
-name = name.upper()
-print(name)
+name2 = name.upper()
+print(name2)
 
-name = name.lower()
-print(name)
+name3 = name.lower()
+print(name3)
