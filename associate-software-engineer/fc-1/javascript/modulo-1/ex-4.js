@@ -1,4 +1,4 @@
-punctuation = 30;
+const punctuation = 30;
 
 if (punctuation >= 90) {
     console.log("Excelente!");

@@ -1,4 +1,4 @@
-weather = "Neve";
+const weather = "Neve";
 
 if (weather === "Ensolarado") {
     console.log("Vá pra praia e abra uma gelada!");
