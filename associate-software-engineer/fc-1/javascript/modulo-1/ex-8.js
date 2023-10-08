@@ -4,8 +4,8 @@ const book = {
     pages: 100
 }
 
-let qtdProperties = 0;
-for (const property in book) {
-    qtdProperties++;
+let numberOfProperties = 0;
+for (const _ in book) {
+    numberOfProperties++;
 }
-console.log(qtdProperties);
+console.log(numberOfProperties);

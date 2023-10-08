@@ -5,5 +5,5 @@ while (total < 10) {
     total += number;
     number++;
 }
-console.log(total)
-console.log(number)
+console.log(total);
+console.log(number);

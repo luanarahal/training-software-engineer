@@ -1,4 +1,4 @@
-const grade = 1;
+const grade = 10;
 
 switch(grade) {
     case 1:
@@ -16,5 +16,8 @@ switch(grade) {
     case 9:
     case 10:
         console.log("Você está aprovado!");
+        break;
+    default:
+        console.log("Digite uma nota de 0 a 10");
         break;
 }

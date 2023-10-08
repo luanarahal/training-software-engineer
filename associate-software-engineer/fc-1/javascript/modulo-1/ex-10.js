@@ -5,4 +5,4 @@ do {
     countingUntilTen++;
 } while (countingUntilTen <= 10);
 
-console.log("Acabou")
+console.log("Acabou");

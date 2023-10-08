@@ -1,5 +1,8 @@
-const iterable = "Luana".split("").reverse();
+const string = "Luana";
+let invertedString = "";
 
-for (let value of iterable) {
-    console.log(value);
+for (let char of string) {
+    invertedString = char + invertedString;
 }
+
+console.log(invertedString);
