@@ -5,9 +5,9 @@ const ages = {
 };
 let biggestValue = 0;
 
-for (let propriedade in ages) {
-    if (ages[propriedade] > biggestValue) {
-        biggestValue = ages[propriedade];
+for (let properties in ages) {
+    if (ages[properties] > biggestValue) {
+        biggestValue = ages[properties];
     }
 }
 
