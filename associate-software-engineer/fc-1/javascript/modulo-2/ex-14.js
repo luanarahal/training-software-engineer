@@ -1,9 +1,5 @@
 const animals = ['gato', 'abelha', 'cachorro'];
-const startingWithA = animals.find(item => {
-    if(item[0] === 'a') {
-        return item;
-    }
-});
+const startingWithA = animals.find(item => item[0] === 'a');
 
 console.log(animals);
 console.log(startingWithA);
