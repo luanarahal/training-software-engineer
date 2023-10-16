@@ -1,7 +1,7 @@
-const animals = ['cao', 'gato', 'cachorro', 'peixe', 'pássaro'];
-const moreThan4Characters = animals.filter(x => {
-    if (x.length > 4) {
-        return x;
+const animals = ['cão', 'gato', 'cachorro', 'peixe', 'pássaro'];
+const moreThan4Characters = animals.filter(item => {
+    if (item.length > 4) {
+        return item;
     }
 })
 
