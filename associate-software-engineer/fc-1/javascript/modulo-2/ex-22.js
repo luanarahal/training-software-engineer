@@ -1,5 +1,5 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const over19YearsOld = estudantes.every(age => age.idade >= 19);
+const over19YearsOld = students.every(student => student.idade >= 19);
 
 console.log(over19YearsOld);

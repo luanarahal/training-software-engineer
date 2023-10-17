@@ -1,5 +1,5 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const age20 = estudantes.find(age => age.idade === 20);
+const studentWith20 = students.find(student => student.idade === 20);
 
-console.log(age20);
+console.log(studentWith20);

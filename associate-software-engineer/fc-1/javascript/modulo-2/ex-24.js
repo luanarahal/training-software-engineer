@@ -1,5 +1,6 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const averageAgeStudents = estudantes.reduce((average, age) =>  average + age.idade, 0)/estudantes.length;
+const addingUpTheAges = students.reduce((average, age) =>  average + age.idade, 0);
+const averageAgeStudents = addingUpTheAges/students.length;
 
 console.log(averageAgeStudents);

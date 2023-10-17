@@ -1,5 +1,5 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const ageEqualTo21 = estudantes.some(age => age.idade === 21);
+const ageEqualTo21 = students.some(student => student.idade === 21);
 
 console.log(ageEqualTo21);

@@ -1,5 +1,5 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const minorOf21 = estudantes.filter(minor => minor.idade < 21);
+const minorOf21 = students.filter(student => student.idade < 21);
 
 console.log(minorOf21);

@@ -1,12 +1,10 @@
-import { estudantes } from "./ex-19.js";
+import { students } from "./mock.js";
 
-const alphabeticalOrder = estudantes.sort((name1, name2) => {
-    if (name1.nome > name2.nome) {
-        return 1;
-    } else if (name1.nome < name2.nome) {
+const alphabeticalOrder = students.sort((student1, student2) => {
+    if (student1.nome < student2.nome) {
         return -1;
     } else {
-        return 0;
+        return true;
     }
 });
 
