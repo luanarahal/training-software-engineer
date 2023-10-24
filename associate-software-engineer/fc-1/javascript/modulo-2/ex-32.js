@@ -1,8 +1,8 @@
 import { students } from "./mock.js";
 
-const thereAreStudentsOfTheSameAge =
-    students
-        .filter(student => student.idade > 25)
-        .some(student => student.idade === student.idade);   
+function thereAreStudentsOfTheSameAge(value) {
+    const sameAgeStudents = students.filter(student => student.idade === value);
+    return sameAgeStudents;
+};   
 
-console.log(thereAreStudentsOfTheSameAge);
+console.log(students.some(thereAreStudentsOfTheSameAge));
