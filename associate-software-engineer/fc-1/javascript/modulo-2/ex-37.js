@@ -6,7 +6,8 @@ const sumOfAges = students
 const averageAgesStudents = sumOfAges/students.length;
 
 const checkStudentsAboveAverage = students
-    .filter(students => students.idade > averageAgesStudents);
+    .filter(students => students.idade > averageAgesStudents)
+    .map(students => `Nome: ${students.nome} - Idade: ${students.idade}`);
 
 console.log(averageAgesStudents);
 console.log(checkStudentsAboveAverage);
