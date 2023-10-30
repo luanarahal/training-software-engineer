@@ -1,5 +1,5 @@
 import { students } from "./mock.js";
 
-const minorOf21 = students.filter(student => student.idade < 21);
+const studentsUnder21 = students.filter(student => student.idade < 21);
 
-console.log(minorOf21);
+console.log(studentsUnder21);

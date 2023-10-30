@@ -1,2 +1,3 @@
 const numbers = [1, 5, -3, 7];
-console.log(numbers.some(item => item / item !== 0));
+const thereAreNegativeNumbers = numbers.some(item => item < 0);
+console.log(thereAreNegativeNumbers);

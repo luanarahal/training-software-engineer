@@ -1,11 +1,5 @@
 import { students } from "./mock.js";
 
-const alphabeticalOrder = students.sort((student1, student2) => {
-    if (student1.nome < student2.nome) {
-        return -1;
-    } else {
-        return true;
-    }
-});
+const alphabeticalOrder = students.sort((student1, student2) => student1.nome.localeCompare(student2.nome));
 
 console.log(alphabeticalOrder);

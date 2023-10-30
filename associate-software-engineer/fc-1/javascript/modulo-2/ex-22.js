@@ -1,5 +1,5 @@
 import { students } from "./mock.js";
 
-const over19YearsOld = students.every(student => student.idade >= 19);
+const studentsOver19 = students.every(student => student.idade >= 19);
 
-console.log(over19YearsOld);
+console.log(studentsOver19);

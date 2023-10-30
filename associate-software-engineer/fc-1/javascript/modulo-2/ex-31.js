@@ -1,7 +1,7 @@
 import { students } from "./mock.js";
 
-const howManyStudentsOverTwentyTearsOld = 
+const studentsOver20 = 
     students.filter(student => student.idade >= 20).length;
 
         
-console.log(howManyStudentsOverTwentyTearsOld);
+console.log(studentsOver20);
