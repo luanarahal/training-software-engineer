@@ -1,6 +1,6 @@
 import { students } from "./mock.js";
 
-function addingUpAges(accumulator, student, index) {
+const addingUpAges = (accumulator, student, index) => {
     return accumulator + student.idade;
 }
 
@@ -10,7 +10,7 @@ const sumOfAges = students
 
 const studentsStartingNameWithA = students.filter(student => student.nome[0] === 'A');
 
-const averageAge = sumOfAges/studentsStartingNameWithA.length;
+const averageAge = sumOfAges / studentsStartingNameWithA.length;
 
 console.log(`Soma das idades: ${sumOfAges}`);
 console.log(`Média das idades: ${averageAge}`);

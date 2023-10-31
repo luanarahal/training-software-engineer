@@ -5,6 +5,6 @@ const studentsWithSameAge = (currentStudent, index, students) => {
         .filter(student => student.idade === currentStudent.idade).length > 1;
 }
 
-const checkStudentsOfTheSameAge = (students.some(studentsWithSameAge));
+const checkStudentsOfTheSameAge = students.some(studentsWithSameAge);
 
 console.log(checkStudentsOfTheSameAge);
