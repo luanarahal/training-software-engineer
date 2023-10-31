@@ -8,8 +8,9 @@ const sumOfAges = students
     .filter(student => student.nome[0] === 'A')
     .reduce(addingUpAges, 0); 
 
-const averageAge = sumOfAges/((addingUpAges.length) + 1);
+const studentsStartingNameWithA = students.filter(student => student.nome[0] === 'A');
 
-console.log(students.filter(student => student.nome[0] === 'A'))
+const averageAge = sumOfAges/studentsStartingNameWithA.length;
+
 console.log(`Soma das idades: ${sumOfAges}`);
 console.log(`Média das idades: ${averageAge}`);

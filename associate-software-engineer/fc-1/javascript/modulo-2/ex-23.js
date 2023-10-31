@@ -1,5 +1,5 @@
 import { students } from "./mock.js";
 
-const studentsWith21 = students.some(student => student.idade === 21);
+const thereAreStudentsWith21 = students.some(student => student.idade === 21);
 
-console.log(studentsWith21);
+console.log(thereAreStudentsWith21);
