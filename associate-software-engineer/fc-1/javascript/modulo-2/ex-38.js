@@ -12,13 +12,13 @@ function formattedDate(date) {
     return formattedDate;
 }
 
-const olderPeople = people
+const checkOlderPeople = people
     .filter(person => person.dataNascimento < new Date('1990-01-01'))
     .sort((older, person) => older.dataNascimento - person.dataNascimento)
     .map(person => `${person.nome} - Data de nascimento: ${formattedDate(person.dataNascimento)}`);
 
-if (olderPeople.length > 0) {
-    console.log(`A pessoa mais velha que nasceu antes de 01-01-1990 é: ${olderPeople[0]}`);
+if (checkOlderPeople.length > 0) {
+    console.log(`A pessoa mais velha que nasceu antes de 01-01-1990 é: ${checkOlderPeople[0]}`);
 } else {
     console.log("Não há pessoas nesta lista!");
 }

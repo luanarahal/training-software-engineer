@@ -1,6 +1,6 @@
 import { students } from "./mock.js";
 
-const sortStudentsAlphabeticallyAndByAge = students
+const sortedStudentsAlphabeticallyAndByAge = students
     .sort((student1, student2) => {
         if(student1.nome[0] !== student2.nome[0]) {
             return student1.nome.localeCompare(student2.nome);
@@ -9,4 +9,4 @@ const sortStudentsAlphabeticallyAndByAge = students
     })
     .map(student => `Nome: ${student.nome} - Idade: ${student.idade}`);
 
-console.log(sortStudentsAlphabeticallyAndByAge);
+console.log(sortedStudentsAlphabeticallyAndByAge);
