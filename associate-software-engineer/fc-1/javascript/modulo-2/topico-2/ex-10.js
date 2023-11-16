@@ -16,5 +16,10 @@ const cars = [
     }
 ];
 
-cars.map(car => car.status = 'available');
+cars.map(car => {
+    if (car.model === 'gol') {
+        car.model = 'polo';
+    }
+})
+
 console.log(cars);
