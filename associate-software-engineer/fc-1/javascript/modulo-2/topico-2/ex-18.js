@@ -1,12 +1,12 @@
-const produtos = [
+const products = [
     { id: 'p1', nome: 'Caneta', preco: 1.50 },
     { id: 'p2', nome: 'Lápis', preco: 0.80 }
 ];
 
-const products = new Map();
+const productMap = new Map();
 
-produtos.forEach(product => {
-    products.set(product.id, product);
+products.forEach(product => {
+    productMap.set(product.id, product);
 });
 
-console.log(products);
+console.log(productMap);

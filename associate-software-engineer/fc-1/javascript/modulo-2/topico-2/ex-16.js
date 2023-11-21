@@ -1,5 +1,5 @@
-const mapaOriginal = new Map([['chave1', 'valor1'], ['chave2', 'valor2']]);
+const originalMap = new Map([['chave1', 'valor1'], ['chave2', 'valor2']]);
 
-const newMap = [...mapaOriginal];
+const newMap = new Map(originalMap);
 
 console.log(newMap);
