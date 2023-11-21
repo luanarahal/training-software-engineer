@@ -16,7 +16,7 @@ const cars = [
     }
 ];
 
-cars.map(car => {
+cars.forEach(car => {
     if (car.model === 'gol') {
         car.model = 'polo';
     }

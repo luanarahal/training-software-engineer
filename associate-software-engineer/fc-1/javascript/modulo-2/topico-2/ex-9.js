@@ -16,5 +16,5 @@ const cars = [
     }
 ];
 
-cars.map(car => car.status = 'available');
+cars.forEach(car => car.status = 'available');
 console.log(cars);

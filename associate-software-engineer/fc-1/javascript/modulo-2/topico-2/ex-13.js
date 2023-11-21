@@ -1,3 +1,3 @@
-const mapa = new Map([['chave1', 'valor1'], ['chave2', 'valor2']]);
+const exampleMap = new Map([['chave1', 'valor1'], ['chave2', 'valor2']]);
 
-console.log(mapa.has('chave2'));
+console.log(exampleMap.has('chave2'));
