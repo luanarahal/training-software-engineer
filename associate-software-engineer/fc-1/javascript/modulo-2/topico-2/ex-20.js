@@ -1,5 +1,5 @@
 const keys = ['chave1', 'chave2', 'chave3'];
-const values = ['valor1', 'valor2', 'valor3'];
+const values = ['valor1', 'valor2', 'valor3', 'valor4'];
 
 const arraysToMap = (keys, values) => {
     const newMap = new Map();
@@ -11,7 +11,7 @@ const arraysToMap = (keys, values) => {
             index++;
         }
     } else {
-        console.log('Os arrays tem comprimentos diferentes, então não é possível relacioná-los');
+        throw new Error('Os arrays tem comprimentos diferentes, então não é possível relacioná-los');
     }
     return newMap;
 }
