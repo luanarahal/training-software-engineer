@@ -1,7 +1,6 @@
-function highestValue(...numbers) {
-    return numbers.reduce((a, b) => {
-        return a > b ? a : b;
-    })
+function max(...numbers) {
+    return Math.max(...numbers);
 }
 
-console.log(highestValue(10, 5, 100, 10, 50, 60, 5000));
+const currentNumbers = [10, 5, 10000, 10, 50, 60, 5000]
+console.log(max(...currentNumbers));
