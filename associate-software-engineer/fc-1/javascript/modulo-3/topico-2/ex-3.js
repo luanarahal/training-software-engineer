@@ -4,4 +4,4 @@ function highestValue(...numbers) {
     })
 }
 
-console.log(highestValue(10, 5, 100));
+console.log(highestValue(10, 5, 100, 10, 50, 60, 5000));
