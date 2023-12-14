@@ -1,5 +1,5 @@
-function criarUsuario(nome, idade = 18) {
-    return `O usuário foi criado! Nome: ${nome} -> Idade: ${idade}`;
+function createUser(name, age = 18) {
+    return `O usuário foi criado! Nome: ${name} -> Idade: ${age}`;
 }
 
-console.log(criarUsuario("Luana"));
+console.log(createUser("Luana"));
