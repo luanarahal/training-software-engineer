@@ -1,7 +1,7 @@
 import { students } from "./mock.js";
 
-const birthdaysInMarch = students
-    .filter(person => {
+function studentsBirthdaysInMarch() {
+    const birthdaysInMarch = students.filter(person => {
         const dateStringToDate = new Date(person.dataNascimento);
 
         const extractMonth = dateStringToDate.getMonth() + 1;
@@ -9,4 +9,7 @@ const birthdaysInMarch = students
         return extractMonth === 3;
     });
 
-console.log(birthdaysInMarch);
+    return birthdaysInMarch;
+}
+
+console.log(studentsBirthdaysInMarch());

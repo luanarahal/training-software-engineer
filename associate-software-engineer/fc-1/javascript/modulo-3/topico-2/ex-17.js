@@ -1,6 +1,8 @@
 import { students } from "./mock.js";
 
-const studentsNamedAna = students
-    .filter(student => student.nome === "Ana");
+function verifyStudentsNamedAna() {
+    const studentsNamedAna = students.filter(student => student.nome === "Ana");
+    return studentsNamedAna;
+}
 
-console.log(studentsNamedAna);
+console.log(verifyStudentsNamedAna());

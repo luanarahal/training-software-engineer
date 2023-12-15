@@ -1,7 +1,7 @@
 import { students } from "./mock.js";
 
-const ageOfStudents = students
-    .map(person => {
+function convertDateOfBirthToAge() {
+    const ageOfStudents = students.map(person => {
         const currentDate = new Date();
         const dateOfBirth = new Date(person.dataNascimento);
 
@@ -11,4 +11,7 @@ const ageOfStudents = students
         return Math.floor(ageInYears);
     });
 
-console.log(ageOfStudents);
+    return ageOfStudents;
+}
+
+console.log(convertDateOfBirthToAge());
