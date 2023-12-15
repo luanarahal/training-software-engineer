@@ -1,7 +1,7 @@
 import { students } from "./mock.js";
 
-const removeStudent = (person) => {
-    const indexToRemove = students.findIndex(student => student.nome === person);
+const removeStudent = (name) => {
+    const indexToRemove = students.findIndex(student => student.nome === name);
     return students.splice(indexToRemove, 1);
 }
 

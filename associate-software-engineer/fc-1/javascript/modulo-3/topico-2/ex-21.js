@@ -1,11 +1,10 @@
 import { students } from "./mock.js";
 
-function convertStringDateToDate() {
-    const dateStringtoDate = students.map(person => {
-        return new Date(person.dataNascimento);
-    });
+function convertStringDateToDate(students) {
+    return new Date(students.dataNascimento);
+};
 
-    return dateStringtoDate;
-}
+const convertedDates = students
+    .map(student => convertStringDateToDate(student));
 
-console.log(convertStringDateToDate());
+console.log(convertedDates);
