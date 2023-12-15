@@ -1,9 +1,12 @@
 function calculateArea(base, height) {
-    if (typeof base !== 'number' || typeof height !== 'number') {
-        return `Números inválidos!`
+    if (!base || !height) {
+        return `Digite números!`;
     }
-    let area = base * height;
-    return area;
+    if (typeof base !== 'number' || typeof height !== 'number') {
+        return `Dados inválidos!`
+    }
+
+    return base * height;
 }
 
-console.log(calculateArea(5, 10));
+console.log(calculateArea("Luana", "Adriano"));

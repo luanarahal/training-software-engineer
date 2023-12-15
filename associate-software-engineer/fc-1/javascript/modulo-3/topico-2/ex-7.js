@@ -1,10 +1,9 @@
-function createProfile(profile) {
-    profile.name = "Luana";
-    profile.age = 27;
-    profile.gender = "Feminino";
-    return profile;
+function createProfile(name, age, gender) {
+    return {
+        name,
+        age,
+        gender
+    }
 }
 
-const profile = new Object();
-
-console.log(createProfile(profile));
+console.log(createProfile("Luana", 27, "F"));
