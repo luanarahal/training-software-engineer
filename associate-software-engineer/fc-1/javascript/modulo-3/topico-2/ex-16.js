@@ -1,6 +1,7 @@
 import { students } from "./mock.js";
 
-const studentsByAgeGroup = students
+function orderStudentsByAgeGroup() {
+    const studentsByAgeGroup = students
     .sort((student1, student2) => student1.idade - student2.idade)
     .map(student => {
         if (student.idade > 0 && student.idade < 12) {
@@ -14,4 +15,7 @@ const studentsByAgeGroup = students
         }
     });
 
-console.log(studentsByAgeGroup);
+    return studentsByAgeGroup;
+}
+
+console.log(orderStudentsByAgeGroup());
