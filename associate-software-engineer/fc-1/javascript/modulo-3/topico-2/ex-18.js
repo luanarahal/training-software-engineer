@@ -1,13 +1,20 @@
 import { students } from "./mock.js";
 
-function studentsBirthdaysInMarch(students, month) {
-    const birthdaysInMarch = students.filter(person => {
+function getMonthNumber(monthName) { 
+    const monthNames = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'    
+    ]
+    return monthNames.indexOf(monthName) + 1;
+}
+function studentsBirthdaysInMonth(students, monthName) {
+    const monthNumber = getMonthNumber(monthName);
+
+    const birthdaysInMonth = students.filter(person => {
         const dateStringToDate = new Date(person.dataNascimento);
         const extractMonth = dateStringToDate.getMonth() + 1;
-        return extractMonth === month;
+        return extractMonth === monthNumber;
     });
-
-    return birthdaysInMarch;
+    return birthdaysInMonth;
 }
 
-console.log(studentsBirthdaysInMarch(students, 3));
+console.log(studentsBirthdaysInMonth(students, 'Março'));

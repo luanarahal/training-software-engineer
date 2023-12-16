@@ -1,17 +1,23 @@
 import { students } from "./mock.js";
 
-const howManyDaysUntilBirthday = students
-    .map(student => {
-        const currentDate = new Date();
-        const birthDate = new Date(student.dataNascimento);
-        const day = birthDate.getDate() + 1 ;
-        const month = birthDate.getMonth();
-        const year = currentDate.getFullYear() + 1;
+const formattedDate = (birthDate, currentDate) => {
+    const dateBirth = new Date(birthDate);
+    const day = dateBirth.getDate() + 1 ;
+    const month = dateBirth.getMonth();
+    const year = currentDate.getFullYear() + 1;
 
-        const nextBirthday = new Date(year, month, day);
-        const daysToBirthday = (nextBirthday - currentDate) / 1000 / 60 / 60 / 24;
+    const nextBirthday = new Date(year, month, day);
+    return nextBirthday;
+}
+
+const howManyDaysUntilBirthday = (students) => {
+    return students.map(student => {
+        const currentDate = new Date();
+        const date = formattedDate(student.dataNascimento, currentDate);
+        const daysToBirthday = (date - currentDate) / 1000 / 60 / 60 / 24;
 
         return Math.floor(daysToBirthday);
     });
+}
 
-console.log(howManyDaysUntilBirthday);
+console.log(howManyDaysUntilBirthday(students));
