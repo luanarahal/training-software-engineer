@@ -6,15 +6,14 @@ const formattedDate = (birthDate, currentDate) => {
     const month = dateBirth.getMonth();
     const year = currentDate.getFullYear() + 1;
 
-    const nextBirthday = new Date(year, month, day);
-    return nextBirthday;
+    return new Date(year, month, day);
 }
 
 const howManyDaysUntilBirthday = (students) => {
     return students.map(student => {
         const currentDate = new Date();
-        const date = formattedDate(student.dataNascimento, currentDate);
-        const daysToBirthday = (date - currentDate) / 1000 / 60 / 60 / 24;
+        const nextBirthday = formattedDate(student.dataNascimento, currentDate);
+        const daysToBirthday = (nextBirthday - currentDate) / 1000 / 60 / 60 / 24;
 
         return Math.floor(daysToBirthday);
     });

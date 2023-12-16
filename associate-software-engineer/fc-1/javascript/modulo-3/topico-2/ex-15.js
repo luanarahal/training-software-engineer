@@ -7,10 +7,10 @@ function calculateAge(dateOfBirth, currentDate) {
     return Math.abs(ageInMilliseconds.getUTCFullYear() - 1970);
 }
 
-function convertDateOfBirthToAge() {
+function convertDateOfBirthToAge(students) {
     const currentDate = new Date();
     const agesOfStudents = students.map(person => calculateAge(person.dataNascimento, currentDate));
     return agesOfStudents;
 }
 
-console.log(convertDateOfBirthToAge());
+console.log(convertDateOfBirthToAge(students));
