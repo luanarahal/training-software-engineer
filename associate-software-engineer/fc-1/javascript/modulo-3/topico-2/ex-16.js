@@ -1,21 +1,29 @@
 import { students } from "./mock.js";
 
-function orderStudentsByAgeGroup() {
-    const studentsByAgeGroup = students
-    .sort((student1, student2) => student1.idade - student2.idade)
-    .map(student => {
-        if (student.idade > 0 && student.idade < 12) {
-            return `Criança`;
-        } else if (student.idade >= 12 && student.idade < 18) {
-            return `Adolescente`;
-        } else if (student.idade >= 18 && student.idade < 60) {
-            return `Adulto`;
-        } else {
-            return `Idoso`;
-        }
-    });
+function orderStudentsByAgeGroup(students) {
+    return students
+        .reduce((total, student) => {
+            const age = student.idade;
+            let ageRange;
 
-    return studentsByAgeGroup;
+            if (age > 0 && age <= 12) {
+                ageRange = '0-12';
+            } else if (age > 12 && age <= 18) {
+                ageRange = '12-18';
+            } else if (age > 18 && age <= 30) {
+                ageRange = '18-30';
+            } else {
+                ageRange = '> 30';
+            }
+            
+            if (!total[ageRange]) {
+                total[ageRange] = [];
+            }
+
+            total[ageRange].push(student);
+
+            return total;
+        }, {})
 }
 
-console.log(orderStudentsByAgeGroup());
+console.log(orderStudentsByAgeGroup(students));

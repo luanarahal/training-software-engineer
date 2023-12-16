@@ -1,9 +1,9 @@
 import { students } from "./mock.js";
 
-const removeStudent = (name) => {
+const removeStudent = (students, name) => {
     const indexToRemove = students.findIndex(student => student.nome === name);
-    return students.splice(indexToRemove, 1);
+    students.splice(indexToRemove, 1)
+    return students;
 }
 
-removeStudent("Natalia");
-console.log(students);
+console.log(removeStudent(students, "Natalia"));

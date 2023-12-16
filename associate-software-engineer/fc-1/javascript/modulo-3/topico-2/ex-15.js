@@ -1,17 +1,16 @@
 import { students } from "./mock.js";
 
+function calculateAge(dateOfBirth, currentDate) {
+    const birthDate = new Date(dateOfBirth);
+    const difference = currentDate - birthDate;
+    const ageInMilliseconds = new Date(difference);
+    return Math.abs(ageInMilliseconds.getUTCFullYear() - 1970);
+}
+
 function convertDateOfBirthToAge() {
-    const ageOfStudents = students.map(person => {
-        const currentDate = new Date();
-        const dateOfBirth = new Date(person.dataNascimento);
-
-        const age = currentDate - dateOfBirth;
-        const ageInYears = age / 1000 / 60 / 60 / 24 / 365;
-
-        return Math.floor(ageInYears);
-    });
-
-    return ageOfStudents;
+    const currentDate = new Date();
+    const agesOfStudents = students.map(person => calculateAge(person.dataNascimento, currentDate));
+    return agesOfStudents;
 }
 
 console.log(convertDateOfBirthToAge());
