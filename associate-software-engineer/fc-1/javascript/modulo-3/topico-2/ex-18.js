@@ -6,6 +6,7 @@ function getMonthNumber(monthName) {
     ]
     return monthNames.indexOf(monthName) + 1;
 }
+
 function studentsBirthdaysInMonth(students, monthName) {
     const monthNumber = getMonthNumber(monthName);
 
