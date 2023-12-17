@@ -1,10 +1,10 @@
 import { students } from "./mock.js";
 
-function formatDate(dateOfBirth) {
-    const date = new Date(dateOfBirth);
-    const day = date.getDate() + 1;
-    const month = date.getMonth();
-    const year = date.getFullYear();
+function formatDate(date) {
+    const dateOriginal = new Date(date);
+    const day = dateOriginal.getDate() + 1;
+    const month = dateOriginal.getMonth();
+    const year = dateOriginal.getFullYear();
 
     const formattedDate = new Date(year, month, day);
     return formattedDate;
