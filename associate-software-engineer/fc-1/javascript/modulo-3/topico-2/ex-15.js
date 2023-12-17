@@ -2,9 +2,9 @@ import { students } from "./mock.js";
 
 function calculateAge(dateOfBirth, currentDate) {
     const birthDate = new Date(dateOfBirth);
-    const difference = currentDate - birthDate;
-    const ageInMilliseconds = new Date(difference);
-    return Math.abs(ageInMilliseconds.getUTCFullYear() - 1970);
+    const ageInMilliseconds = currentDate - birthDate;
+    const ageInYears = new Date(ageInMilliseconds).getUTCFullYear() - new Date(0).getUTCFullYear();
+    return Math.abs(ageInYears);
 }
 
 function convertDateOfBirthToAge(students) {

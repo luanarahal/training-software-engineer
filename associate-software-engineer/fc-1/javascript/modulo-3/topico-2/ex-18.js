@@ -7,14 +7,15 @@ function getMonthNumber(monthName) {
     return monthNames.indexOf(monthName) + 1;
 }
 
+function verifyMonth(dateStringToDate, monthNumber) {
+    const dateString = new Date(dateStringToDate);
+    const extractMonth = dateString.getMonth() + 1;
+    return extractMonth === monthNumber;
+}
+
 function studentsBirthdaysInMonth(students, monthName) {
     const monthNumber = getMonthNumber(monthName);
-
-    const birthdaysInMonth = students.filter(person => {
-        const dateStringToDate = new Date(person.dataNascimento);
-        const extractMonth = dateStringToDate.getMonth() + 1;
-        return extractMonth === monthNumber;
-    });
+    const birthdaysInMonth = students.filter(person => verifyMonth(person.dataNascimento, monthNumber));
     return birthdaysInMonth;
 }
 

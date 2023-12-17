@@ -1,6 +1,6 @@
 import { students } from "./mock.js";
 
-function verifyAgesAbove18(students, age) {
+function getStudentsAgeAbove18(students, age) {
     return students.filter(student => student.idade > age);
 } 
-console.log(verifyAgesAbove18(students, 18));
+console.log(getStudentsAgeAbove18(students, 18));
