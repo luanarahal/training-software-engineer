@@ -1,6 +1,6 @@
 import { students } from "./mock.js";
 
-function verifyRange(age) {
+function getRange(age) {
     let ageRange;
     if (age > 0 && age <= 12) {
         ageRange = '0-12';
@@ -18,7 +18,7 @@ function orderStudentsByAgeGroup(students) {
     return students
         .reduce((total, student) => {
             const age = student.idade;
-            let ageRange = verifyRange(age);
+            let ageRange = getRange(age);
             
             if (!total[ageRange]) {
                 total[ageRange] = [];
