@@ -7,12 +7,14 @@ function getMonthNumber(monthName) {
     return monthNames.indexOf(monthName) + 1;
 }
 
+function verifyMonth (birthDate, monthNumber) {
+    const date = new Date(birthDate);
+    const month = date.getMonth() + 1;
+    return month === monthNumber;
+}
+
 const borninJuly = (students, monthName) => {
     const monthNumber = getMonthNumber(monthName);
-    return students.filter(student => {
-        const birthDate = new Date(student.dataNascimento);
-        const month = birthDate.getMonth() + 1;
-        return month === monthNumber;
-    })
+    return students.filter(student => verifyMonth(student.dataNascimento, monthNumber))
 }
-console.log(borninJuly(students, "Julho"));
+console.log(borninJuly(students, "Maio"));

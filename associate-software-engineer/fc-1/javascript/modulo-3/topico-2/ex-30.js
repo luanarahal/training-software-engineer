@@ -5,7 +5,7 @@ const listStudentsFromASpecificRange = (students, initialAge, finalAge) => {
         const age = student.idade;
 
         if (age > initialAge && age < finalAge) {
-            return age;
+            return student;
         }
     });
 

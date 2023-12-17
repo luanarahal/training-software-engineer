@@ -7,15 +7,17 @@ function getMonthNumber(monthName) {
     return monthNames.indexOf(monthName) + 1;
 }
 
+function verifyMonth (birthDate, monthNumber) {
+    const date = new Date(birthDate);
+    const month = date.getMonth() + 1;
+    return month === monthNumber;
+}
+
 function averageAge(students, monthName) {
     const monthNumber = getMonthNumber(monthName);
 
     const filteredStudents = students
-    .filter((student) => {
-        const birthDate = new Date(student.dataNascimento);
-        const month = birthDate.getMonth() + 1;
-        return month === monthNumber;
-    })
+    .filter((student) => verifyMonth(student.dataNascimento, monthNumber))
 
     if(filteredStudents.length === 0) {
         return `Não tem nenhum estudante que nasceu neste mês, portanto não é possível fazer a média.`;
@@ -27,4 +29,4 @@ function averageAge(students, monthName) {
     return sumAges / filteredStudents.length;
 }
 
-console.log(averageAge(students, "Janeiro"));
+console.log(averageAge(students, "Maio"));
