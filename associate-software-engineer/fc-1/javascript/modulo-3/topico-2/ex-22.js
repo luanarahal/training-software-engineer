@@ -19,3 +19,18 @@ const consumo = {
       {"idEstudante": 1005, "categoria": "Jogos", "valor": 400, "dataCompra": "2023-04-10"}
     ]
 }
+
+function calculateAge(dateOfBirth, currentDate) {
+  const birthDate = new Date(dateOfBirth);
+  const ageInMilliseconds = currentDate - birthDate;
+  const ageInYears = new Date(ageInMilliseconds).getUTCFullYear() - new Date(0).getUTCFullYear();
+  return Math.abs(ageInYears);
+}
+
+function convertDateOfBirthToAge(estudantes) {
+  const currentDate = new Date();
+  const agesOfStudents = estudantes.map(person => calculateAge(person.dataNascimento, currentDate));
+  return agesOfStudents;
+}
+
+console.log(convertDateOfBirthToAge(consumo.estudantes));
