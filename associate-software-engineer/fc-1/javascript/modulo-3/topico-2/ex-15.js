@@ -1,16 +1,8 @@
 import { students } from "./mock.js";
+import { calculateAge } from "./utils.date.js";
 
-function calculateAge(dateOfBirth, currentDate) {
-    const birthDate = new Date(dateOfBirth);
-    const ageInMilliseconds = currentDate - birthDate;
-    const ageInYears = new Date(ageInMilliseconds).getUTCFullYear() - new Date(0).getUTCFullYear();
-    return Math.abs(ageInYears);
-}
+students.forEach(person => {
+    person.idade2 = calculateAge(person.dataNascimento);
+});
 
-function convertDateOfBirthToAge(students) {
-    const currentDate = new Date();
-    const agesOfStudents = students.map(person => calculateAge(person.dataNascimento, currentDate));
-    return agesOfStudents;
-}
-
-console.log(convertDateOfBirthToAge(students));
+console.log(students);

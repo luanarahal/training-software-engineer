@@ -1,23 +1,11 @@
 import { students } from "./mock.js";
-
-function getMonthNumber(monthName) { 
-    const monthNames = [
-        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'    
-    ]
-    return monthNames.indexOf(monthName) + 1;
-}
-
-function verifyMonth (birthDate, monthNumber) {
-    const date = new Date(birthDate);
-    const month = date.getMonth() + 1;
-    return month === monthNumber;
-}
+import { getMonthNumber, isMonthTheSame } from "./utils.date.js";
 
 function averageAge(students, monthName) {
     const monthNumber = getMonthNumber(monthName);
 
     const filteredStudents = students
-    .filter((student) => verifyMonth(student.dataNascimento, monthNumber))
+    .filter((student) => isMonthTheSame(student.dataNascimento, monthNumber))
 
     if(filteredStudents.length === 0) {
         return `Não tem nenhum estudante que nasceu neste mês, portanto não é possível fazer a média.`;
