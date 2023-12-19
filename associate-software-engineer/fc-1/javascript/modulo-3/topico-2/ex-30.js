@@ -1,19 +1,23 @@
 import { students } from "./mock.js";
 
-const listStudentsFromASpecificRange = (students, initialAge, finalAge) => {
-    const studentsRange = students.filter(student => {
-        const age = student.idade;
+const verifyIfHasStudents = (students, initialAge, finalAge) => {
+    const filteredStudents = listStudentsFromASpecificRange(students, initialAge, finalAge);
 
-        if (age > initialAge && age < finalAge) {
-            return student;
-        }
-    });
-
-    if(studentsRange.length === 0) {
+    if(!filteredStudents.length) {
         return "Não tem estudantes nesta faixa de idade";
     }
 
-    return studentsRange;
+    return filteredStudents;
+};
+
+const listStudentsFromASpecificRange = (students, initialAge, finalAge) => {
+    return students.filter(student => {
+        const age = student.idade;
+
+        if (age >= initialAge && age <= finalAge) {
+            return student;
+        }
+    });
 }
 
-console.log(listStudentsFromASpecificRange(students, 18, 25));
+console.log(verifyIfHasStudents(students, 18, 25));

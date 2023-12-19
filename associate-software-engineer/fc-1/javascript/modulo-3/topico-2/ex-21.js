@@ -4,7 +4,8 @@ function convertStringDateToDate(students) {
     return new Date(students.dataNascimento);
 };
 
-const convertedDates = students
-    .map(student => convertStringDateToDate(student));
+students.forEach(student => {
+    student.dataNascimento = convertStringDateToDate(student)
+});
 
-console.log(convertedDates);
+console.log(students);

@@ -2,7 +2,7 @@ export const students = [
     {
         nome: "Luana",
         idade: 17,
-        dataNascimento: "1996-12-09"
+        dataNascimento: "1996-12-19"
     },
     {
         nome: "Adriano",

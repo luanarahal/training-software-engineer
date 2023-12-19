@@ -1,3 +1,5 @@
+import { calculateAge } from "./utils.date.js";
+
 const consumo = {
     "estudantes": [
       {"id": 1001, "dataNascimento": "2005-03-02"},
@@ -20,17 +22,50 @@ const consumo = {
     ]
 }
 
-function calculateAge(dateOfBirth, currentDate) {
-  const birthDate = new Date(dateOfBirth);
-  const ageInMilliseconds = currentDate - birthDate;
-  const ageInYears = new Date(ageInMilliseconds).getUTCFullYear() - new Date(0).getUTCFullYear();
-  return Math.abs(ageInYears);
+const getAgeRange = (person) => {
+  if (person.idade < 0) {
+    return "Não aceitamos idade negativa.";
+  }
+
+  if (person.idade <= 18) {
+    return "0-18";
+  } else if (person.idade > 18 && person.idade <= 20) {
+    return "18-20";
+  } else if (person.idade > 20 && person.idade <= 22) {
+    return "20-22";
+  }
+  return "> 22";
 }
 
-function convertDateOfBirthToAge(estudantes) {
-  const currentDate = new Date();
-  const agesOfStudents = estudantes.map(person => calculateAge(person.dataNascimento, currentDate));
-  return agesOfStudents;
+const verifyIdentity = (compra, person, groupedByAge) => {
+  const ageRangeKey = getAgeRange(person);
+
+  if(!groupedByAge[ageRangeKey]) {
+    groupedByAge[ageRangeKey] = [];
+  }
+
+  if (compra.idEstudante === person.id) {
+    return groupedByAge[ageRangeKey].push(compra);
+  }
 }
 
-console.log(convertDateOfBirthToAge(consumo.estudantes));
+const filterPurchasesByStudent = (consumo, person, groupedByAge) => {
+  person.idade = calculateAge(person.dataNascimento);
+
+  consumo.compras.forEach(purchase => verifyIdentity(purchase, person, groupedByAge));
+}
+
+const groupByAgeRange = (consumo) => {
+  const groupedByAge = {
+    "0-18": [],
+    "18-20": [],
+    "20-22": [],
+    ">22": [],
+  };
+
+  consumo.estudantes.forEach(person => filterPurchasesByStudent(consumo, person, groupedByAge));
+
+  return groupedByAge;
+}
+
+console.log(groupByAgeRange(consumo));
