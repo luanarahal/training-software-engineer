@@ -22,50 +22,48 @@ const consumo = {
     ]
 }
 
-const getAgeRange = (person) => {
-  if (person.idade < 0) {
+const getAgeRange = (age) => {
+  if (age < 0) {
     return "Não aceitamos idade negativa.";
   }
 
-  if (person.idade <= 18) {
+  if (age <= 18) {
     return "0-18";
-  } else if (person.idade > 18 && person.idade <= 20) {
+  } else if (age > 18 && age <= 20) {
     return "18-20";
-  } else if (person.idade > 20 && person.idade <= 22) {
+  } else if (age > 20 && age <= 22) {
     return "20-22";
-  }
-  return "> 22";
-}
-
-const verifyIdentity = (compra, person, groupedByAge) => {
-  const ageRangeKey = getAgeRange(person);
-
-  if(!groupedByAge[ageRangeKey]) {
-    groupedByAge[ageRangeKey] = [];
-  }
-
-  if (compra.idEstudante === person.id) {
-    return groupedByAge[ageRangeKey].push(compra);
+  } else {
+    return "> 22";
   }
 }
 
-const filterPurchasesByStudent = (consumo, person, groupedByAge) => {
-  person.idade = calculateAge(person.dataNascimento);
-
-  consumo.compras.forEach(purchase => verifyIdentity(purchase, person, groupedByAge));
+const filterPurchasesByStudent = (studentId, purchases) => {
+  return purchases
+    .filter(purchase => purchase.idEstudante === studentId)
+    .map(purchase => {
+      delete purchase.idEstudante;
+      return purchase;
+    });
 }
 
-const groupByAgeRange = (consumo) => {
-  const groupedByAge = {
+const groupByAgeRange = (students, purchases) => {
+  const groupedAge = {
     "0-18": [],
     "18-20": [],
     "20-22": [],
     ">22": [],
   };
 
-  consumo.estudantes.forEach(person => filterPurchasesByStudent(consumo, person, groupedByAge));
+  students.forEach(student => {
+    const purchasesByStudent = filterPurchasesByStudent(student.id, purchases);
+    const age = calculateAge(student.dataNascimento);
+    const ageRange = getAgeRange(age);
 
-  return groupedByAge;
+    groupedAge[ageRange].push(...purchasesByStudent);
+  });
+
+  return groupedAge;
 }
 
-console.log(groupByAgeRange(consumo));
+console.log(groupByAgeRange(consumo.estudantes, consumo.compras));
