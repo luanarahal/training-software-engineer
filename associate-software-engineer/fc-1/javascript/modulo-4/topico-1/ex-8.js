@@ -1,10 +1,8 @@
-function getMonthNumber(monthName, monthNames) {
-    return monthNames.indexOf(monthName) + 1;
-};
-
-try {
-    const month = "Dezembro";
-
+function getMonthNumber(monthName) {
+    if (typeof monthName !== 'string' || !monthName || !monthNames.includes(monthName)) {
+        throw new Error("Mês digitado inválido!");
+    }
+    
     const monthNames = [
         "Janeiro",
         "Fevereiro",
@@ -20,11 +18,11 @@ try {
         "Dezembro",
     ];
 
-    if (typeof month !== 'string' || !month || !monthNames.includes(month)) {
-        throw new Error("Mês digitado inválido!");
-    }
+    return monthNames.indexOf(monthName) + 1;
+};
 
-    console.log(getMonthNumber(month, monthNames));
+try {
+    console.log(getMonthNumber("Dezembro"));
 } catch (error) {
     console.error(error.message);
 }
