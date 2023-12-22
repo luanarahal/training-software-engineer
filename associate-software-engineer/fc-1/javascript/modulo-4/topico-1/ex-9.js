@@ -1,11 +1,4 @@
 const calculateArea = (base, height) => {
-    return `A área do retângulo é: ${base * height} m2`;
-};
-
-try {
-    const base = 10;
-    const height = 5;
-
     if (!base || !height) {
         throw new Error("Entrada inválida, favor atribuir números para base e altura!")
     }
@@ -18,7 +11,11 @@ try {
         throw new Error("Digite números positivos para fazer o cálculo da área!")
     }
     
-    console.log(calculateArea(base, height));
+    return `A área do retângulo é: ${base * height} m2`;
+};
+
+try {    
+    console.log(calculateArea(10, 5));
 } catch (error) {
     console.error(error.message);
 }
