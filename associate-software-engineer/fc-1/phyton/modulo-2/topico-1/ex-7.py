@@ -1,5 +1,5 @@
 fruits = ['banana', 'maçã', 'abacaxi']
 
-firstLetterCapitalize = map(lambda fruit: fruit.capitalize(), fruits)
+first_letter_capitalize = map(lambda fruit: fruit.capitalize(), fruits)
 
-print(list(firstLetterCapitalize))
+print(list(first_letter_capitalize))

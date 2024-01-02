@@ -1,5 +1,5 @@
 animals = ['gato', 'abelha', 'cachorro']
 
-animalStartingWithA = next((animal for animal in animals if animal[0] == 'a'))
+animal_starting_with_a = next((animal for animal in animals if animal[0] == 'a'))
 
-print(animalStartingWithA)
+print(animal_starting_with_a)

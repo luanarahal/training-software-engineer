@@ -2,6 +2,6 @@ from functools import reduce
 
 numbers = [1, 2, 3, 4, 5]
 
-sumValues = reduce(lambda accumulator, number: accumulator + number, numbers)
+sum_values = reduce(lambda accumulator, number: accumulator + number, numbers)
 
-print(sumValues)
+print(sum_values)

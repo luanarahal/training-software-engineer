@@ -2,6 +2,6 @@ from functools import reduce
 
 words = ['Olá', ' ', 'mundo', '!']
 
-concatedString = reduce(lambda accumulator, string: accumulator + string, words)
+concated_string = reduce(lambda accumulator, string: accumulator + string, words)
 
-print(concatedString)
+print(concated_string)

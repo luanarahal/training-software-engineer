@@ -1,5 +1,5 @@
 numbers = [1, 5, 3, 7]
 
-allNumbersArePositive = all(number > 0 for number in numbers)
+all_numbers_are_positive = all(number > 0 for number in numbers)
 
-print(allNumbersArePositive)
+print(all_numbers_are_positive)

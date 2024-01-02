@@ -1,5 +1,5 @@
 animals = ['gato', 'cachorro', 'peixe', 'pássaro']
 
-animalWithMoreThan4Characters = filter(lambda animal: len(animal) > 4, animals)
+animal_with_more_than_4_characters = filter(lambda animal: len(animal) > 4, animals)
 
-print(list(animalWithMoreThan4Characters))
+print(list(animal_with_more_than_4_characters))
