@@ -10,7 +10,7 @@ const secondPromise = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve("Segunda mensagem!");
-        }, 2000);
+        }, 3000);
     });
 };
 
@@ -18,16 +18,13 @@ const thirdPromise = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve("Terceira mensagem!");
-        }, 3000);
+        }, 4000);
     });
 };
 
-Promise.all([
-    firstPromise(),
-    secondPromise(),
-    thirdPromise()
-])
-    .then(messages => {
-        const [message1, message2, message3] = messages;
-        console.log(`${message1}, \n ${message2}, \n ${message3}`);
-    });
+firstPromise()
+    .then(details => console.log(details))
+    .then(message => secondPromise(message))
+    .then(details => console.log(details))
+    .then(message => thirdPromise(message))
+    .then(details => console.log(details));
