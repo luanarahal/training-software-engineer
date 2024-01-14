@@ -1,7 +1,3 @@
-const featchData = (url) => {
-    return fetch(url)
-        .then(response => response.json());
-}
-
-featchData('https://jsonplaceholder.typicode.com/todos/1')
+fetch('https://randomuser.me/api/')
+    .then(response => response.json())
     .then(data => console.log(data));
