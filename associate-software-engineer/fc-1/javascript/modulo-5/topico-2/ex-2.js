@@ -1,12 +1,11 @@
 const readMessage = (id) => {
     return new Promise((resolve, reject) => {
-        if (id === 1) {
-            resolve("Sucesso!");
-        } else {
-            setTimeout(() => {
-                reject("Negado!");
-            }, 2000)
+        if (id !== 1) {
+            reject("Negado!");
         }
+        setTimeout(() => {
+            resolve("Sucesso!");
+        }, 1000);
     });
 }
 

@@ -4,10 +4,13 @@ const myPromise = () => {
             setTimeout(() => resolve("Mensagem retornada com sucesso!"), 5000);
         });
 
-        setTimeout(() => reject("Time out!"), 3000);
+        const cancel = setTimeout(() => reject("Time out!"), 3000);
 
         mainPromise
-            .then(message => resolve(message))
+            .then(message => {
+                clearTimeout(cancel);
+                resolve(message);
+            })
             .catch(err => reject(err));
     });
 }
