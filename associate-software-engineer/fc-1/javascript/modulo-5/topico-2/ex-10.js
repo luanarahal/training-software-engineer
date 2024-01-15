@@ -1,23 +1,24 @@
-const discoverNumber = (number) => {
+const generateRandomNumber = () => {
     let min = 0;
     let max = 10;
-    let randomNumber = Math.floor(Math.random() * (max - min * 1) + min);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+const discoverNumber = (number) => {
+    const randomNumber = generateRandomNumber();
     console.log(`Número digitado: ${number}`);
     console.log(`Número gerado: ${randomNumber}`);
-    return new Promise(() => {
-        const checkNumber = new Promise((resolve, reject) => {
-            if (number === randomNumber) {
-                resolve("Acertou!");
-            } else {
-                reject("Errou!");
-            }
-        });
-
-        checkNumber
-            .then(result => console.log(result))
-            .catch(err => console.error(err));
-
+    return new Promise((resolve, reject) => {
+        if (number === randomNumber) {
+            resolve("Acertou!");
+        } else {
+            reject("Errou!");
+        }
     });
 }
 
-discoverNumber(5);
+discoverNumber(0)
+    .then(result => console.log(result))
+    .catch(err => console.error(err));
+
+//discoverNumber(5);
