@@ -1,7 +1,12 @@
-const verifyNumber = () => {
+const generateRandomNumber = () => {
     let min = 0;
-    let max = 10;
-    let randomNumber = Math.floor(Math.random() * (max - min * 1) + min);
+    let max = 1;
+    return (Math.random() * (max - min) + min).toFixed(2);
+}
+
+const verifyNumber = () => {
+    const randomNumber = generateRandomNumber();
+    console.log(randomNumber)
     return new Promise((resolve, reject) => {
         if (randomNumber >= 0.5) {
             resolve("O número é maior ou igual a 0.5!");
