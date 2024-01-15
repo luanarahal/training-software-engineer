@@ -1,11 +1,7 @@
-const generateRandomNumber = () => {
-    let min = 0;
-    let max = 1;
-    return (Math.random() * (max - min) + min).toFixed(2);
-}
+import { generateRandomNumber } from "./utils.js";
 
 const verifyNumber = () => {
-    const randomNumber = generateRandomNumber();
+    const randomNumber = generateRandomNumber(0, 1);
     console.log(randomNumber)
     return new Promise((resolve, reject) => {
         if (randomNumber >= 0.5) {

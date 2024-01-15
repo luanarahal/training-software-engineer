@@ -1,11 +1,7 @@
-const generateRandomNumber = () => {
-    let min = 0;
-    let max = 10;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
+import { generateRandomNumber } from "./utils.js";
 
 const discoverNumber = (number) => {
-    const randomNumber = generateRandomNumber();
+    const randomNumber = Math.floor(generateRandomNumber(0, 10));
     console.log(`Número digitado: ${number}`);
     console.log(`Número gerado: ${randomNumber}`);
     return new Promise((resolve, reject) => {
@@ -17,8 +13,6 @@ const discoverNumber = (number) => {
     });
 }
 
-discoverNumber(0)
+discoverNumber(5)
     .then(result => console.log(result))
     .catch(err => console.error(err));
-
-//discoverNumber(5);
