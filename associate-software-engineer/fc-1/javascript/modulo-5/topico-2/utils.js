@@ -7,8 +7,6 @@ const validateRange = (min, max) => {
     }
 };
 
-(2, 10, { type: "decimal", precision: 2 });
-
 export const generateRandomNumber = (min, max, precision) => {
     validateRange(min, max);
 
