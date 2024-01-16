@@ -1,4 +1,4 @@
-import { generateRandomNumber } from "./utils.js";
+import { generateRandomNumber } from "../utils.js";
 
 const discoverNumber = (number) => {
     const randomNumber = generateRandomNumber(0, 10);
