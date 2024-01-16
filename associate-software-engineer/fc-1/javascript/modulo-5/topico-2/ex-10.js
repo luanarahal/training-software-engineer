@@ -1,7 +1,7 @@
 import { generateRandomNumber } from "./utils.js";
 
 const discoverNumber = (number) => {
-    const randomNumber = Math.floor(generateRandomNumber(0, 10));
+    const randomNumber = generateRandomNumber(0, 10);
     console.log(`Número digitado: ${number}`);
     console.log(`Número gerado: ${randomNumber}`);
     return new Promise((resolve, reject) => {

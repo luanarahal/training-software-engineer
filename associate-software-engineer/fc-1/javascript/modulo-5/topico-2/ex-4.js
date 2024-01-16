@@ -1,7 +1,7 @@
 import { generateRandomNumber } from "./utils.js";
 
 const verifyNumber = () => {
-    const randomNumber = generateRandomNumber(0, 1);
+    const randomNumber = generateRandomNumber(0, 1, 2);
     console.log(randomNumber)
     return new Promise((resolve, reject) => {
         if (randomNumber >= 0.5) {
