@@ -23,8 +23,8 @@ const thirdPromise = () => {
 };
 
 const main = async () => {
-    const data = await Promise.all([firstPromise(), secondPromise(), thirdPromise()]);
-    console.log(data);
+    const [firstResponse, secondResponse, thirdResponse] = await Promise.all([firstPromise(), secondPromise(), thirdPromise()]);
+    console.log(firstResponse, secondResponse, thirdResponse);
 }
 
 main();
