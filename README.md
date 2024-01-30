@@ -3,15 +3,12 @@ Principal repositório de estudos de programação.
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-![GitHub Org's stars](https://img.shields.io/github/stars/camilafernanda?style=social)
-
-
 
 Este repositório foi criado com o objetivo principal de aprender programação, atualmente a linguagem mais utilizada é JavaScript. O propósito é desenvolver uma base sólida e bem estruturada, enfatizando a criação de código limpo, modular e a utilização eficiente dos comandos Git para controle de versão.
 
 **Objetivos**
 
-_Aprender JavaScript:_ O principal enfoque é na linguagem JavaScript, uma linguagem amplamente utilizada no desenvolvimento web.
+- `Aprender JavaScript:` O principal enfoque é na linguagem JavaScript, uma linguagem amplamente utilizada no desenvolvimento web.
 
 _Estabelecer uma Base Estruturada:_ Aprender a criar um código bem estruturado é crucial para o desenvolvimento sustentável de software. Praticaremos a organização de código de maneira eficiente, seguindo boas práticas de desenvolvimento.
 
