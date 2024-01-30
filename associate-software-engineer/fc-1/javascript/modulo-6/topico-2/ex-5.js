@@ -1,6 +1,6 @@
-const apiKey = '3cfea54a8f9236298dbd85d9779c11e7';
+const API_KEY = '3cfea54a8f9236298dbd85d9779c11e7';
 const query = 'Inception';
-const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`;
+const OPEN_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`;
 
 const getInfosMovie = async (url) => {
     try {
@@ -12,4 +12,4 @@ const getInfosMovie = async (url) => {
     }
 }
 
-getInfosMovie(url);
+getInfosMovie(OPEN_MOVIE_URL);
