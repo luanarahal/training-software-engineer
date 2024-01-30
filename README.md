@@ -1,5 +1,5 @@
 # Training Software Engineer
-
+Principal repositório de estudos de programação.
 Este repositório foi criado com o objetivo principal de aprender programação, atualmente a linguagem mais utilizada é JavaScript. O propósito é desenvolver uma base sólida e bem estruturada, enfatizando a criação de código limpo, modular e a utilização eficiente dos comandos Git para controle de versão.
 
 **Objetivos**
