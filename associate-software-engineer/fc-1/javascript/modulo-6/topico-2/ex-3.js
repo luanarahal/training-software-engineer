@@ -1,4 +1,4 @@
-const url = 'https://api.github.com/users/adrianopratesr/repos';
+const GITHUB_REPOS_URL = 'https://api.github.com/users/adrianopratesr/repos';
 
 const getReposNames = async (url) => {
     try {
@@ -10,4 +10,4 @@ const getReposNames = async (url) => {
     }
 }
 
-getReposNames(url);
+getReposNames(GITHUB_REPOS_URL);
