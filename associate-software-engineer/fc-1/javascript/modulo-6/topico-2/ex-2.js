@@ -6,7 +6,7 @@ const getWeather = async (url) => {
     try {
         const data = await fetch(url);
         const response = await data.json();
-        console.log(response);
+        console.log(`Temperatura em ${city}: ${response.main.temp} °C`);
     } catch (error) {
         console.error(error);
     }
