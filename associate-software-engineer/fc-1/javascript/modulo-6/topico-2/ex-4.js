@@ -1,6 +1,6 @@
 const url = 'https://pokeapi.co/api/v2/pokemon/pikachu';
 
-const getName = async (url) => {
+const getPikachuName = async (url) => {
     try {
         const data = await fetch(url);
         const response = await data.json();
@@ -10,4 +10,4 @@ const getName = async (url) => {
     }
 }
 
-getName(url);
+getPikachuName(url);
