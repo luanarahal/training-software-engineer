@@ -1,4 +1,8 @@
-const GITHUB_REPOS_URL = 'https://api.github.com/users/adrianopratesr/repos';
+const getGithubName = (name) => {
+    return `https://api.github.com/users/${name}/repos`;
+}
+
+const GITHUB_REPOS_URL = getGithubName("luanarahal");
 
 const getReposNames = async (url) => {
     try {

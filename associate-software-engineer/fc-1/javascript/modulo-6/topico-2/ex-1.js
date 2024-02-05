@@ -20,19 +20,25 @@ const getClient = async (url, id) => {
     }
 }
 
-const getMethod = async (method, dados) => {
-    return {
-        method: `${method}`,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dados)
-    };
+const makeRequest = (httpMethod, contentType, bodyData) => {
+    if (contentType && bodyData) {
+        return {
+            method: `${httpMethod}`,
+            headers: {
+                'Content-Type': contentType
+            },
+            body: JSON.stringify(bodyData)
+        };
+    } else {
+        return {
+            method: `${httpMethod}`
+        };
+    }
 }
 
 const postClient = async (url, dados) => {
     try {
-        const data = await fetch(url, await getMethod('POST', dados));
+        const data = await fetch(url, makeRequest('POST', 'application/json', dados));
         const response = await data.json();
         console.log(response);
     } catch (error) {
@@ -42,7 +48,7 @@ const postClient = async (url, dados) => {
 
 const putClient = async (url, id, dados) => {
     try {
-        const data = await fetch(`${url}/${id}`, await getMethod('PATCH', dados));
+        const data = await fetch(`${url}/${id}`, makeRequest('PATCH', 'application/json', dados));
         const response = await data.text();
         console.log(response);
     } catch (error) {
@@ -52,9 +58,7 @@ const putClient = async (url, id, dados) => {
 
 const deleteClient = async (url, id) => {
     try {
-        const data = await fetch(`${url}/${id}`, {
-            method: 'DELETE'
-        });
+        const data = await fetch(`${url}/${id}`, makeRequest('DELETE'));
         const response = await data.text();
         console.log(response);
     } catch (error) {
