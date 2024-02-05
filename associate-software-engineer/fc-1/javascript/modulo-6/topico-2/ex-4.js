@@ -1,4 +1,8 @@
-const OPEN_PIKACHU_URL = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+const getPokemonName = (name) => {
+    return `https://pokeapi.co/api/v2/pokemon/${name}`;
+}
+
+const OPEN_POKEMON_URL = getPokemonName("pikachu");
 
 const getPikachuName = async (url) => {
     try {
@@ -12,4 +16,4 @@ const getPikachuName = async (url) => {
     }
 }
 
-getPikachuName(OPEN_PIKACHU_URL);
+getPikachuName(OPEN_POKEMON_URL);
