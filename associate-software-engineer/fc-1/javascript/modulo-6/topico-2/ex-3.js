@@ -1,8 +1,8 @@
-const getGithubName = (name) => {
+const makeGithubURL = (name) => {
     return `https://api.github.com/users/${name}/repos`;
 }
 
-const GITHUB_REPOS_URL = getGithubName("luanarahal");
+const GITHUB_REPOS_URL = makeGithubURL("luanarahal");
 
 const getReposNames = async (url) => {
     try {
