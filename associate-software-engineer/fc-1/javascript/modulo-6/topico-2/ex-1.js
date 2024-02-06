@@ -1,3 +1,4 @@
+import { makeRequest } from "../utils.js";
 const CLIENT_SERVICE_URL = 'http://localhost:3000/client';
 
 const getAllClients = async (url) => {
@@ -20,25 +21,9 @@ const getClient = async (url, id) => {
     }
 }
 
-const makeRequest = (httpMethod, contentType, bodyData) => {
-    if (contentType && bodyData) {
-        return {
-            method: `${httpMethod}`,
-            headers: {
-                'Content-Type': contentType
-            },
-            body: JSON.stringify(bodyData)
-        };
-    } else {
-        return {
-            method: `${httpMethod}`
-        };
-    }
-}
-
-const postClient = async (url, dados) => {
+const postClient = async (url, bodyData) => {
     try {
-        const data = await fetch(url, makeRequest('POST', 'application/json', dados));
+        const data = await fetch(url, makeRequest('POST', 'application/json', bodyData));
         const response = await data.json();
         console.log(response);
     } catch (error) {
@@ -46,10 +31,10 @@ const postClient = async (url, dados) => {
     }
 }
 
-const putClient = async (url, id, dados) => {
+const putClient = async (url, id, bodyData) => {
     try {
-        const data = await fetch(`${url}/${id}`, makeRequest('PATCH', 'application/json', dados));
-        const response = await data.text();
+        const data = await fetch(`${url}/${id}`, makeRequest('PATCH', 'application/json', bodyData));
+        const response = await data.json();
         console.log(response);
     } catch (error) {
         console.error(error);

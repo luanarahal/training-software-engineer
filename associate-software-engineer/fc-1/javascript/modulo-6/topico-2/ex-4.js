@@ -1,8 +1,8 @@
-const getPokemonName = (name) => {
+const makePokemonURL = (name) => {
     return `https://pokeapi.co/api/v2/pokemon/${name}`;
 }
 
-const OPEN_POKEMON_URL = getPokemonName("pikachu");
+const OPEN_POKEMON_URL = makeURL("pikachu");
 
 const getPikachuName = async (url) => {
     try {
