@@ -1,11 +1,9 @@
-const verifyEmail = () => {
+const checkEmptyField = () => {
     const emailBox = document.getElementById("emailInput");
-    const error = document.getElementById("errorText");
+    const error = document.getElementById("error");
     if (emailBox.value == '') {
         error.innerHTML = "Digite um e-mail!";
-    } else {
-        error.innerHTML = "Cadastrado!";
     }
 }
 
-document.getElementById("checkEmail").addEventListener('click', verifyEmail);
+document.getElementById("checkEmail").addEventListener('click', checkEmptyField);

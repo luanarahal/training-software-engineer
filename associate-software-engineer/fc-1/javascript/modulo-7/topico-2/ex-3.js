@@ -7,9 +7,13 @@ const generateColor = () => {
     return color;
 }
 
-const changeBackgroundColor = () => {
+const changeBackgroundColor = (element) => {
     const color = generateColor();
-    document.body.style.backgroundColor = color;
+    element.style.backgroundColor = color;
 }
 
-document.getElementById("changeBackgroundColor").addEventListener('click', changeBackgroundColor);
+const changeBodyBackgroundColor = () => {
+    changeBackgroundColor(document.body);
+}
+
+document.getElementById("changeBackgroundColor").addEventListener('click', changeBodyBackgroundColor);

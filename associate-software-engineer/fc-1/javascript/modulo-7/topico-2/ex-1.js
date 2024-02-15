@@ -1,4 +1,4 @@
-document.getElementById("buttonChangeText").addEventListener('click', function () {
-    const text = document.getElementById("paragraph");
-    text.textContent = "Texto alterado!";
+document.getElementById("buttonChangeText").addEventListener('click', () => {
+    const paragraph = document.getElementById("paragraph");
+    paragraph.textContent = "Texto alterado!";
 });

@@ -1,14 +1,11 @@
-let state = false;
-
 const showAndHideDiv = () => {
-    const toggle = document.getElementById("toggleDiv");
-    if (!state) {
-        toggle.style.display = 'none';
-    } else {
-        toggle.style.display = 'block';
-    }
+    const toggleDivDisplay = toggleDiv.style.display;
 
-    state = !state;
+    if (toggleDivDisplay === 'block') {
+        toggleDiv.style.display = 'none';
+    } else {
+        toggleDiv.style.display = 'block';
+    }
 };
 
 document.getElementById("showAndHideDiv").addEventListener('click', showAndHideDiv);
