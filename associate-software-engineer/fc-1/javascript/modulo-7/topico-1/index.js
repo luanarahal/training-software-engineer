@@ -14,7 +14,9 @@ highlight.style.backgroundColor = "pink";
 
 //Exercício 4
 const items = document.querySelector(".item");
-items.textContent = "Pode discordar, mas é a realidade!";
+for (const item of items) {
+    item.textContent = "Pode discordar, mas é a realidade!";
+}
 
 //Exercício 5
 const links = document.querySelectorAll("a.link");
