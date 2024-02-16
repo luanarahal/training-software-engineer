@@ -1,10 +1,9 @@
-const countNumber = (clickCounter) => {
-    const numberElement = document.getElementById(clickCounter);
-    let number = parseInt(numberElement.textContent);
-    number++;
-    numberElement.textContent = number;
+const countNumber = (clickCounterNode) => {
+    let number = parseInt(clickCounterNode.textContent) + 1;
+    clickCounterNode.textContent = number;
 }
 
 document.getElementById("countNumber").addEventListener('click', () => {
-    countNumber("clickCounter")
+    const clickCounterNode = document.getElementById("clickCounter");
+    countNumber(clickCounterNode);
 });

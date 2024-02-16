@@ -1,8 +1,8 @@
 const moveDiv = (animateDiv) => {
-    const div = document.getElementById(animateDiv);
-    div.style.left = '30px';
+    animateDiv.style.left = '30px';
 }
 
 document.getElementById("moveDiv").addEventListener('click', () => {
-    moveDiv("animateDiv")
+    const animateDiv = document.getElementById("animateDiv");
+    moveDiv(animateDiv);
 });
