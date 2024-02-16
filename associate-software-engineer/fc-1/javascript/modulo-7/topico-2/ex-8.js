@@ -1,5 +1,5 @@
-const moveDiv = (animateDiv) => {
-    animateDiv.style.left = '30px';
+const moveElement = (element) => {
+    element.style.left = '30px';
 }
 
 document.getElementById("moveDiv").addEventListener('click', () => {
