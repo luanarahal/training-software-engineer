@@ -1,5 +1,5 @@
 const countNumber = (clickCounterNode) => {
-    let number = parseInt(clickCounterNode.textContent) + 1;
+    const number = parseInt(clickCounterNode.textContent) + 1;
     clickCounterNode.textContent = number;
 }
 
