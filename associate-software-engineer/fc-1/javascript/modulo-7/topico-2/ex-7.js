@@ -1,10 +1,14 @@
-const addFontColor = () => {
-    document.getElementById("hoverText").style.color = "blue";
+const addFontColor = (hoverText, color) => {
+    document.getElementById(hoverText).style.color = color;
 }
 
-const removeFontColor = () => {
-    document.getElementById("hoverText").style.color = '';
+const removeFontColor = (hoverText) => {
+    document.getElementById(hoverText).style.color = '';
 }
 
-document.getElementById("hoverText").addEventListener('mouseover', addFontColor);
-document.getElementById("hoverText").addEventListener('mouseout', removeFontColor);
+document.getElementById("hoverText").addEventListener('mouseover', () => {
+    addFontColor("hoverText", "blue")
+});
+document.getElementById("hoverText").addEventListener('mouseout', () => {
+    removeFontColor("hoverText")
+});

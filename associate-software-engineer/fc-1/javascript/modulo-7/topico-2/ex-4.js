@@ -1,9 +1,11 @@
-const checkEmptyField = () => {
-    const emailBox = document.getElementById("emailInput");
-    const error = document.getElementById("error");
+const checkEmptyField = (emailInput, error) => {
+    const emailBox = document.getElementById(emailInput);
+    const errorMessage = document.getElementById(error);
     if (emailBox.value == '') {
-        error.innerHTML = "Digite um e-mail!";
+        return errorMessage.innerHTML = "Digite um e-mail!";
     }
 }
 
-document.getElementById("checkEmail").addEventListener('click', checkEmptyField);
+document.getElementById("checkEmail").addEventListener('click', () => {
+    checkEmptyField("emailInput", "error")
+});
